@@ -65,6 +65,36 @@ class hashMap {
         }
         return null; // Returns null if key is not found
     }
+
+    // Returns value that is assigned to argument key
+    has(key) {
+        const index = this.hash(key);
+        const bucket = this.buckets[index];
+
+        for (let i = 0; i < bucket.length; i++) {
+            const [k, v] = bucket[i];
+            if (k === key) {
+                return true; // Returns true if key value is found
+            }
+        }
+        return false; // Return false if not found
+    }
+
+    // Allows us to remove entry with key and return true, else returns false
+    remove(key) {
+        const index = this.hash(key);
+        const bucket = this.buckets[index];
+
+        for (let i = 0; i < bucket.length; i++) {
+            const [k, _] = bucket[i];
+            if (k === key) {
+                bucket.splice(i, 1); // Removes key value pair
+                this.size--; // Decreases size
+                return true; // Returns true if found
+            }
+        }
+        return false; // Returns false if key is not found
+    }
 }
 
 const hello = new hashMap();
