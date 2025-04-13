@@ -95,6 +95,13 @@ class hashMap {
         }
         return false; // Returns false if key is not found
     }
+
+    // Returns the length of keys (using size variable)
+    length() {
+        console.log(this.size);
+    }
+
+    
 }
 
 const hello = new hashMap();
