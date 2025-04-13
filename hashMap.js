@@ -101,7 +101,11 @@ class hashMap {
         console.log(this.size);
     }
 
-    
+    // Clears all entries 
+    clear() {
+        this.buckets = newArray(this.capacity).fill(null).map(() => []); // Clears buckets
+        this.size = 0;
+    }
 }
 
 const hello = new hashMap();
