@@ -52,6 +52,19 @@ class hashMap {
             }
         }
     }
+
+    // Allows us to return a value, based on the key provided
+    get(key) {
+        const index = this.hash(key);
+        const bucket = this.buckets[index];
+
+        for (let pair of bucket) {
+            if (pair[0] === key) {
+                return pair[1] // Returns relevant key value pair
+            }
+        }
+        return null; // Returns null if key is not found
+    }
 }
 
 const hello = new hashMap();
