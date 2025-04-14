@@ -1,4 +1,4 @@
-class hashMap {
+export default class HashMap {
     constructor(capacity=16, loadFactor=0.8) {
         this.loadFactor = loadFactor;
         this.capacity = capacity;
@@ -14,7 +14,7 @@ class hashMap {
             hashCode = primeNumber * hashCode + key.charCodeAt(i) % this.capacity;
         }
 
-        return hashCode;
+        return math.abs(hashCode) % this.capacity; // Done to prevent us from overflowing capacity
     }
 
     set(key, value) {
@@ -103,7 +103,7 @@ class hashMap {
 
     // Clears all entries 
     clear() {
-        this.buckets = newArray(this.capacity).fill(null).map(() => []); // Clears buckets
+        this.buckets = new Array(this.capacity).fill(null).map(() => []); // Clears buckets
         this.size = 0;
     }
 
@@ -145,5 +145,9 @@ class hashMap {
     }
 }
 
-const test = new hashMap();
+const test = new HashMap();
 
+test.set('carrot', 'orange');
+
+
+test.length();
