@@ -106,6 +106,21 @@ class hashMap {
         this.buckets = newArray(this.capacity).fill(null).map(() => []); // Clears buckets
         this.size = 0;
     }
+
+    // Returns an array of keys when called
+    key() {
+        const keyArray = []; // This is where we'll feed our keys and return from
+
+        for (const bucket of this.buckets) {
+            for (const [key, _] of bucket) {
+                keyArray.push(key);
+            }
+        }
+
+        return keyArray; // Returns when loop is complete
+    }
+
+    // Returns an array of all values when called
 }
 
 const hello = new hashMap();
