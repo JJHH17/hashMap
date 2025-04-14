@@ -132,6 +132,17 @@ class hashMap {
 
         return valueArray; // Returns when loop is complete
     }
+
+    // Returns and array that contains both the key and the value entries
+    entries() {
+        const allEntries = []; // We'll feed values and keys into here to be returned
+        for (const bucket of this.buckets) {
+            for (const [key, value] of bucket) {
+                allEntries.push([key, value]);
+            }
+        }
+        return allEntries; // Returns array
+    }
 }
 
 const test = new hashMap();
