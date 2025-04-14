@@ -18,3 +18,15 @@ test.set('kite', 'pink');
 test.set('lion', 'golden');
 
 console.log(test.length());
+
+// Testing overwriting set keys
+test.set('kite', 'lion');
+test.set('lion', 'tiger');
+
+console.log(test.length());
+
+// Testing load balancing (this should go over the capacity)
+console.log(test.capacity); // This now sits at 12
+test.set('moon', 'silver');
+console.log(test.length());
+console.log(test.capacity); // This now sits at 32
