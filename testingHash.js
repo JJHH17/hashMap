@@ -17,4 +17,4 @@ test.set('jacket', 'blue');
 test.set('kite', 'pink');
 test.set('lion', 'golden');
 
-test.length();
+console.log(test.length());

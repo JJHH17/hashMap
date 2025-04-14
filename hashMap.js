@@ -14,7 +14,7 @@ export default class HashMap {
             hashCode = primeNumber * hashCode + key.charCodeAt(i) % this.capacity;
         }
 
-        return math.abs(hashCode) % this.capacity; // Done to prevent us from overflowing capacity
+        return Math.abs(hashCode) % this.capacity; // Done to prevent us from overflowing capacity
     }
 
     set(key, value) {
