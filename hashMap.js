@@ -121,8 +121,18 @@ class hashMap {
     }
 
     // Returns an array of all values when called
+    values() {
+        const valueArray = []; 
+
+        for (const bucket of this.buckets) {
+            for (const [_, value] of bucket) {
+                valueArray.push(value);
+            }
+        }
+
+        return valueArray; // Returns when loop is complete
+    }
 }
 
-const hello = new hashMap();
+const test = new hashMap();
 
-console.log(hello.hash("hello how are you?"));
