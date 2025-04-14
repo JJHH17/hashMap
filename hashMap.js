@@ -98,7 +98,7 @@ export default class HashMap {
 
     // Returns the length of keys (using size variable)
     length() {
-        console.log(this.size);
+        return this.size;
     }
 
     // Clears all entries 
